@@ -43,7 +43,7 @@ map.set("cat", "bat")
 # map.set("doggo", "froggo")
 # map.set("rat", "shat")
 
-map.set("dog", "rat")
+map.set("dog", 3)
 
 map.delete("cat")
 puts map.show
