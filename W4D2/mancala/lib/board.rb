@@ -1,4 +1,4 @@
-
+require "byebug"
 class Board
   attr_accessor :cups
 
@@ -34,18 +34,18 @@ class Board
   end
 
   def distribute_stones(pos, num_stones)
-    pos.between?(0,5) ? opponent_cup_index = 13 : opponent_cup_index = 6 
+    pos.between?(0,5) ? opponent_cup_index = 6 : opponent_cup_index = 13 
     @cups[pos] = []
     i=(pos+1)%14
-    current_cup = @cups[i]
     while num_stones > 0
+      # debugger
+      current_cup = @cups[i]
       if i == opponent_cup_index
         i = (i+1) % 14
         next
       end
       current_cup << :stone
       i = (i+1)%14
-      current_cup = @cups[i]
       num_stones-=1
     end
   end
